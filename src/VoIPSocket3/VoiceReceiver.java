@@ -87,7 +87,7 @@ public class VoiceReceiver extends Thread{
         }
         
         VoIPPacket lastFromPrev = new VoIPPacket((byte)15, silence);
-        boolean[] hasPacket = new boolean[9];
+//        boolean[] hasPacket = new boolean[9];
         
         while(running){
             try{

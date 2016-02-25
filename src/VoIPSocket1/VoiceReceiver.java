@@ -101,7 +101,9 @@ public class VoiceReceiver extends Thread{
                      n++;
                  }
                 
-                player.playBlock(receivedData.getAudio());
+                if(receivedData !=  null){
+                    player.playBlock(receivedData.getAudio());
+                }
 
             }
             catch(IOException e){

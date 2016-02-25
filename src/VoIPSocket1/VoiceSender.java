@@ -10,7 +10,8 @@ import voip.*;
 public class VoiceSender extends Thread {
     
     static DatagramSocket sending_socket;
-
+    WaveFormWindow wfw = new WaveFormWindow("Wave Form");
+    
     @Override
     public void run() {
         //Port for voip
@@ -83,6 +84,7 @@ public class VoiceSender extends Thread {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream( );
                 for(int i = 0; i < 10; i++){
                     a = recorder.getBlock();
+                    wfw.drawBytes(a);
                     outputStream.write(a);
                 }
                 
